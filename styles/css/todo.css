@@ -3,16 +3,6 @@
   justify-content: space-between;
   align-items: center;
   width: 200px; }
-  .header__box__retour {
-    font-size: 15px;
-    color: #FDFDFDFD;
-    padding: 3px 10px;
-    border: none;
-    background-color: #004343;
-    cursor: pointer;
-    transition: all 200ms ease-in; }
-    .header__box__retour:hover {
-      background-color: #0c6868; }
 
 .todolist-actuel {
   color: #004343;

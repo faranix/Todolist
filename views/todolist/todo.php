@@ -31,9 +31,11 @@
         <div class="view-todolist">
             <?php foreach ($sousTodoList as $sousTodo): ?>
                 <div class="view-todolist__todo">
-                    <a href="/todolist/index" class="view-todolist__todo__delete">Retour</a>
+                    <a href="/todolist/index" class="view-todolist__todo__view">Retour</a>
                     <p class="view-todolist__todo__title"><?= $sousTodo['title'] ?></p>
                     <p class="view-todolist__todo__date"><?= $sousTodo['date_time'] ?></p>
+                    <a href="" class="view-todolist__todo__add">Modifier</a>
+                    <a href="/todolist/deleteSousTodo/<?php echo $sousTodo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
             <?php endforeach; ?>
         </div>
