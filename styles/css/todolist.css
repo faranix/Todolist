@@ -66,52 +66,63 @@ main {
     font-size: 20px;
     border-bottom: 1px solid #004343;
     overflow-x: scroll; }
-    .view-todolist__todo__title {
-      width: 50%;
-      padding: 10px 15px;
-      border-right: 1px solid #004343;
-      border-left: 1px solid #004343;
-      overflow-y: scroll; }
     .view-todolist__todo__date {
       width: 30%;
       padding: 10px 5px;
-      border-right: 1px solid #004343; }
+      border-right: 1px solid #004343;
+      border-left: 1px solid #004343; }
+    .view-todolist__todo__edit {
+      display: flex;
+      width: 60%; }
+      .view-todolist__todo__edit input:focus {
+        outline: none; }
+      .view-todolist__todo__edit__title {
+        padding: 10px 15px;
+        width: 85%;
+        border: none;
+        border-right: 1px solid #004343;
+        overflow-y: scroll;
+        font-size: 20px;
+        text-align: center; }
+      .view-todolist__todo__edit__add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: #FDFDFDFD;
+        cursor: pointer;
+        border: none;
+        transition: all 250ms ease-in;
+        width: 15%;
+        padding: 15px 0px;
+        border-right: 1px solid #004343;
+        font-size: 19px; }
+        .view-todolist__todo__edit__add:hover {
+          color: #FDFDFDFD;
+          background-color: #0c6868; }
     .view-todolist__todo__view {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 10%;
       height: 100%;
       background-color: #FDFDFDFD;
       cursor: pointer;
       border: none;
-      transition: all 250ms ease-in; }
+      transition: all 250ms ease-in;
+      width: 10%; }
       .view-todolist__todo__view:hover {
-        color: #FDFDFDFD;
-        background-color: #0c6868; }
-    .view-todolist__todo__add {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 10%;
-      height: 100%;
-      background-color: #FDFDFDFD;
-      cursor: pointer;
-      border: none;
-      transition: all 250ms ease-in; }
-      .view-todolist__todo__add:hover {
         color: #FDFDFDFD;
         background-color: #0c6868; }
     .view-todolist__todo__delete {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 10%;
       height: 100%;
       background-color: #FDFDFDFD;
       cursor: pointer;
       border: none;
-      transition: all 250ms ease-in; }
+      transition: all 250ms ease-in;
+      width: 10%; }
       .view-todolist__todo__delete:hover {
         color: #FDFDFDFD;
         background-color: #0c6868; }

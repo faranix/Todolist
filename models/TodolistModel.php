@@ -45,21 +45,33 @@ class TodolistModel extends Model {
     }
 
     /**
-     * Permets de Supprimer une Todo
+     * Permets de Supprimer une todolist
      */
-    public function deleteTodo($id) {    
+    public function deleteTodo($id) {  
+        // Supprime tout les sous_todolist liée à la todolist  
         $sql = 'DELETE FROM sous_todolist WHERE id_todolist=?';
         $options = [$id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
 
+        // Supprime la todolist
         $sql = "DELETE FROM todolist WHERE id=?";
         $options = [$id];
+        $query = $this->_connexion->prepare($sql);
+        return $query->execute($options);
+    }
+
+    /**
+     * Permets de modifier une todolist
+     */
+    public function modifyTodo($id) {
+        $sql = 'UPDATE `todolist` SET title=? WHERE id=?';
+        $options = [$_POST['editTodo'], $id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
     }
 
-    // Sous todolist
+    // Sous todolist //
 
     /**
      * Permets de supprimer une sous todolist
@@ -109,5 +121,15 @@ class TodolistModel extends Model {
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
         return $query->fetchAll();
+    }
+
+    /**
+     * Permets de modifier une sous-todolist
+     */
+    public function modifySousTodo($id) {
+        $sql = 'UPDATE `sous_todolist` SET title=? WHERE id=?';
+        $options = [$_POST['editSousTodo'], $id];
+        $query = $this->_connexion->prepare($sql);
+        $query->execute($options);
     }
 }

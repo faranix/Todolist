@@ -83,33 +83,51 @@ main {
         border-bottom: 1px solid $color-primary;
         overflow-x: scroll;
 
-        &__title {
-            width: 50%;
-            padding: 10px 15px;
-            border-right: 1px solid $color-primary;
-            border-left: 1px solid $color-primary;
-            overflow-y: scroll;
-        }
-
         &__date {
             width: 30%;
             padding: 10px 5px;
             border-right: 1px solid $color-primary;
+            border-left: 1px solid $color-primary;
+        }
+
+        &__edit {
+            display: flex;
+            width: 60%;
+
+            input:focus {
+                outline: none;
+            }
+
+            &__title {
+                padding: 10px 15px;
+                width: 85%;
+                border: none;
+                border-right: 1px solid $color-primary;
+                overflow-y: scroll;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            &__add{
+                @include flexMid;
+                @include settingBtn;
+                width: 15%;
+                padding: 15px 0px;
+                border-right: 1px solid $color-primary;
+                font-size: 19px
+            }
         }
 
         &__view {
             @include flexMid;
             @include settingBtn;
+            width: 10%;
         }
 
-        &__add{
-            @include flexMid;
-            @include settingBtn;
-        }
-  
         &__delete {
             @include flexMid;
             @include settingBtn;
+            width: 10%;
         }
         
     }

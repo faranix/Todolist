@@ -28,9 +28,11 @@
             <?php foreach ($todolists as $todo): ?>
                 <div class="view-todolist__todo">
                     <a href="/todolist/todo/<?php echo $todo["id"] ?>" class="view-todolist__todo__view">Voir</a>
-                    <p class="view-todolist__todo__title"><?= $todo['title'] ?></p>
                     <p class="view-todolist__todo__date"><?= $todo['date_time'] ?></p>
-                    <a href="" class="view-todolist__todo__add">Modifier</a>
+                    <form class="view-todolist__todo__edit" action="/todolist/modifySousTodo/<?php echo $todo["id"] ?>" method="post">
+                        <input class="view-todolist__todo__edit__title" name="editTodo" value="<?= $todo['title'] ?>" required></input>
+                        <button type="submit" class="view-todolist__todo__edit__add">Modifier</button>
+                    </form>
                     <a href="/todolist/delete/<?php echo $todo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
             <?php endforeach; ?>

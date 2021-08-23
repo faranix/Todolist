@@ -84,18 +84,48 @@ class Todolist extends Controller {
 
     }
 
-    public function deleteSousTodo($id) {
-            // Démarre la session
-            session_start();
+    public function modify($id) {
+        // Démarre la session
+        session_start();
 
-            $this->loadModel("TodolistModel");
-    
-            if ($_SESSION['id']) {
-                $this->TodolistModel->deleteSousTodo($id);
-    
-                header('Location: /todolist/index');
-            } else {
-                header('Location: /connexion/index');
-            }
+        $this->loadModel("TodolistModel");
+
+        if ($_SESSION['id']) {
+            $this->TodolistModel->modifyTodo($id);
+
+            header('Location: /todolist/index');
+        } else {
+            header('Location: /connexion/index');
+        }
+    }
+
+    public function deleteSousTodo($id) {
+        // Démarre la session
+        session_start();
+
+        $this->loadModel("TodolistModel");
+
+        if ($_SESSION['id']) {
+            $this->TodolistModel->deleteSousTodo($id);
+
+            header('Location: /todolist/index');
+        } else {
+            header('Location: /connexion/index');
+        }
+    }
+
+    public function modifySousTodo($id) {
+        // Démarre la session
+        session_start();
+
+        $this->loadModel("TodolistModel");
+
+        if ($_SESSION['id']) {
+            $this->TodolistModel->modifySousTodo($id);
+
+            header('Location: /todolist/index');
+        } else {
+            header('Location: /connexion/index');
+        }
     }
 }
