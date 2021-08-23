@@ -1,0 +1,106 @@
+@import "../sass/variable";
+@import "../sass/mixin";
+
+* {
+    @include initialisation;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+body {
+    @include flexMid;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-primary;
+}
+
+.box {
+    padding: 2px 2px;
+    width: 60vh;
+    height: 70vh;
+    background-color: $color-white;
+    border: 1px solid $color-white;
+    box-shadow: 0px 0px 2px $color-white;
+    border-radius: 15px;
+
+    &__top {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        
+        &__lien {
+            text-align: center;
+            width: 50%;
+            margin-top: 4px;
+            padding: 10px 0px;
+            background-color: $color-primary;
+            color: $color-white;
+            transition: all 250ms ease-in;
+
+            &:nth-child(1) {
+                border-top-left-radius: 15px;
+            }
+
+            &:nth-child(2) {
+                border-top-right-radius: 15px
+            }
+
+            &:hover {
+                background-color: $color-animationBtn;
+            }
+        }
+    }
+
+
+    &__center {
+        @include flexMid;
+        height: 80%;
+    
+        &__input {
+            display: flex;
+            flex-direction: column;
+            margin: 60px 0px;
+    
+            label {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+    
+            input {
+                width: 300px;
+                padding: 10px 5px;
+                font-size: 15px;
+            }
+        }
+    
+        &__message {
+            @include flexMid;
+            margin-top: -30px;
+            margin-bottom: 10px;
+        }
+    
+        &__btn {
+            display: flex;
+            justify-content: center;
+    
+            button {
+                padding: 10px 40px;
+                align-self: center;
+                cursor: pointer;
+                border: none;
+                color: $color-white;
+                background-color: $color-primary;
+                transition: all 250ms ease-in;
+        
+                &:hover {
+                background-color: $color-animationBtn;
+                }
+            } 
+        }
+    }
+}
+
+  
