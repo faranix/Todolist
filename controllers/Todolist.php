@@ -49,6 +49,7 @@ class Todolist extends Controller {
                 $this->TodolistModel->disconnect();
             } 
             
+            // Permets d'envoyer une tâche à faire sur la todo ciblé à la base de donnée
             if (isset($_POST['addInSousTodoList'])) {
                 $this->TodolistModel->insertSousTodo($id);
             }
@@ -64,5 +65,37 @@ class Todolist extends Controller {
         } else {
             header('Location: /connexion/index');
         }
+    }
+
+    public function delete($id) {
+        // Démarre la session
+        session_start();
+
+        $this->loadModel("TodolistModel");
+
+        if ($_SESSION['id']) {
+            $this->TodolistModel->deleteTodo($id);
+
+            header('Location: /todolist/index');
+            
+        } else {
+            header('Location: /connexion/index');
+        }
+
+    }
+
+    public function deleteSousTodo($id) {
+            // Démarre la session
+            session_start();
+
+            $this->loadModel("TodolistModel");
+    
+            if ($_SESSION['id']) {
+                $this->TodolistModel->deleteSousTodo($id);
+    
+                header('Location: /todolist/index');
+            } else {
+                header('Location: /connexion/index');
+            }
     }
 }

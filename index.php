@@ -33,7 +33,7 @@ if($params[0] != '') {
     }
 } else {
     // Redirige automatiquement sur la page d'accueil
-    header("Location: http://localhost:8888/connexion");
+    header("Location: http://localhost:8888/connexion/index");
 }
 
 

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="../../styles/css/todolist.css">
-    <link rel="stylesheet" href="../../styles/css/todo.css">
+    <link rel="stylesheet" href="/styles/css/todolist.css">
+    <link rel="stylesheet" href="/styles/css/todo.css">
 
     <title>Todolist</title>
 </head>
@@ -14,7 +14,6 @@
     <header class="header">
         <h1 class="header__title">Todolist</h1>
         <div class="header__box">
-            <a href="/todolist/index" class="header__box__retour">Retour</a>
             <form class="header__deconnexion" action="" method="post">
                 <button type="submit" name="deconnexion" class="header__deconnexion__btn">Déconnexion</button>
             </form>
@@ -32,9 +31,11 @@
         <div class="view-todolist">
             <?php foreach ($sousTodoList as $sousTodo): ?>
                 <div class="view-todolist__todo">
-                    <a href="/todolist/todo/<?php echo $sousTodo["id"] ?>" class="view-todolist__todo__delete">Voir</a>
+                    <a href="/todolist/index" class="view-todolist__todo__view">Retour</a>
                     <p class="view-todolist__todo__title"><?= $sousTodo['title'] ?></p>
                     <p class="view-todolist__todo__date"><?= $sousTodo['date_time'] ?></p>
+                    <a href="" class="view-todolist__todo__add">Modifier</a>
+                    <a href="/todolist/deleteSousTodo/<?php echo $sousTodo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
             <?php endforeach; ?>
         </div>

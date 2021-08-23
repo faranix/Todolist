@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="../../styles/css/todolist.css">
+    <link rel="stylesheet" href="/styles/css/todolist.css">
 
     <title>Todolist</title>
 </head>
@@ -27,9 +27,11 @@
         <div class="view-todolist">
             <?php foreach ($todolists as $todo): ?>
                 <div class="view-todolist__todo">
-                    <a href="/todolist/todo/<?php echo $todo["id"] ?>" class="view-todolist__todo__delete">Voir</a>
+                    <a href="/todolist/todo/<?php echo $todo["id"] ?>" class="view-todolist__todo__view">Voir</a>
                     <p class="view-todolist__todo__title"><?= $todo['title'] ?></p>
                     <p class="view-todolist__todo__date"><?= $todo['date_time'] ?></p>
+                    <a href="" class="view-todolist__todo__add">Modifier</a>
+                    <a href="/todolist/delete/<?php echo $todo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
             <?php endforeach; ?>
         </div>

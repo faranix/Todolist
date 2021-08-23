@@ -16,7 +16,7 @@ class TodolistModel extends Model {
         unset($_SESSION);
         session_destroy();
         session_write_close();
-        header("Location: http://localhost:8888/connexion");
+        header("Location: /connexion/index");
     }
 
     // Todolist
@@ -38,7 +38,7 @@ class TodolistModel extends Model {
         // Récupère la date actuelle en format anglais pour mySql
         $dateNow = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO `todolist`(`title`, `date_time`, `id_users`) VALUES (?, ?, ?)";
+        $sql = 'INSERT INTO ' . $this->table .'(`title`, `date_time`, `id_users`) VALUES (?, ?, ?)';
         $options = [$_POST["addInTodoList"], $dateNow , $this->id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
@@ -47,24 +47,47 @@ class TodolistModel extends Model {
     /**
      * Permets de Supprimer une Todo
      */
+    /*public function deleteTodo($id) {
+        $sql = 'DELETE FROM ' .$this->table . 'INNER JOIN `` WHERE id=?';
+        $options = [$id];
+        $query = $this->_connexion->prepare($sql);
+        $query->execute($options);
+    }*/
+
+    // Sous todolist
+
+    /**
+     * Permets de supprimer une sous todolist
+     */
+    public function deleteSousTodo($id) {
+        $this->table = 'sous_todolist';
+
+        $sql = 'DELETE FROM ' . $this->table . ' WHERE id=?';
+        $options = [$id];
+        $query = $this->_connexion->prepare($sql);
+        $query->execute($options);
+    }
+
+     /**
+      * Permets d'obtenir les tâches d'une listes
+      */
     public function getOneTodolist($id) {
-        $sql = "SELECT * FROM todolist WHERE id=?";
+        $sql = 'SELECT * FROM todolist WHERE id=?';
         $options = [$id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
         return $query->fetch();
     }
 
-    // Sous todolist
-
     /**
      * Permets d'envoyer une tâche à faire sur la todo ciblé à la base de donnée
      */
     public function insertSousTodo($id) {
         // Récupère la date actuelle en format anglais pour mySql
+        $this->table = 'sous_todolist';
         $dateNow = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO `sous_todolist`(`title`, `date_time`, `id_todolist`) VALUES (?, ?, ?)";
+        $sql = 'INSERT INTO ' . $this->table .  '(`title`, `date_time`, `id_todolist`) VALUES (?, ?, ?)';
         $options = [$_POST["addInSousTodoList"], $dateNow , $id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
@@ -76,9 +99,10 @@ class TodolistModel extends Model {
     public function getAllSousTodolist($id) {
         $this->table = 'sous_todolist';
         
-        $sql = 'SELECT * FROM ' . $this->table .' WHERE id_todolist=' . $id;
+        $sql = 'SELECT * FROM ' . $this->table . ' WHERE id_todolist=?';
+        $options = [$id];
         $query = $this->_connexion->prepare($sql);
-        $query->execute();
+        $query->execute($options);
         return $query->fetchAll();
     }
 }
