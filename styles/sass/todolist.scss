@@ -4,13 +4,20 @@
 * {
     @include initialisation;
 }
-  
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+main {
+    @include flexMid;
+    flex-direction: column;
+}
+
+// Header
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background-color: $color-primary;
-    margin-bottom: 30px;
+    @include header;
 
     &__title {
         color: $color-white;
@@ -35,13 +42,7 @@
     }
 }
   
-  
-  
-main {
-    @include flexMid;
-    flex-direction: column;
-}
-  
+// Main
 .add-todolist {
     width: 60vw;
     margin-bottom: 40px;
@@ -76,6 +77,7 @@ main {
 
     &__todo {
         display: flex;
+        align-items: center;
         text-align: center;
         font-size: 20px;
         border: 1px solid $color-primary;
@@ -95,7 +97,6 @@ main {
         }
 
         &__add{
-            border: 1px solid $color-primary;
             @include flexMid;
             width: 10%;
 
@@ -114,25 +115,22 @@ main {
             }
         }
 
-        &__delete {
-            border: 1px solid $color-primary;
-            @include flexMid;
-            width: 10%;
+
             
-            &__btn {
-                width: 100%;
-                height: 100%;
-                background-color: $color-white;
-                cursor: pointer;
-                border: none;
-                transition: all 250ms ease-in;
-                
-                &:hover {
-                    color: $color-white;
-                    background-color: $color-animationBtn;
-                }
+        &__delete {
+            width: 10%;
+            border: 1px solid $color-primary;
+            background-color: $color-white;
+            cursor: pointer;
+            border: none;
+            transition: all 250ms ease-in;
+            
+            &:hover {
+                color: $color-white;
+                background-color: $color-animationBtn;
             }
         }
+        
     }
 }
 

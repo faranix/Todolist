@@ -1,0 +1,29 @@
+// Extention du fichier todolist.scss
+@import "../sass/variable";
+@import "../sass/mixin";
+
+.header__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+
+    &__retour {
+        font-size: 15px;
+        color: $color-white;
+        padding: 3px 10px;
+        border: none;
+        background-color: $color-primary;
+        cursor: pointer;
+        transition: all 200ms ease-in;
+        
+        &:hover {
+          background-color: $color-animationBtn;
+        }
+    }
+}
+
+.todolist-actuel {
+    color: $color-primary;
+    margin-bottom: 15px;
+}

@@ -24,7 +24,7 @@ class Connexion extends Controller {
                 $_SESSION['email'] = $data['email'];
                 
                 // Envoi l'utilisateur sur la page de todolist
-                header('Location: http://localhost:8888/todolist');
+                header('Location: /todolist/index');
             } else {
                 // Message d'erreur "Mot de passe incorrect !"
                 $error = [ 'error' => 'Mot de passe incorrect !' ];

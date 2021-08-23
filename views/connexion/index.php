@@ -11,8 +11,8 @@
 <body>
     <div class="box">
         <div class="box__top">
-            <a class="box__top__lien" href="http://localhost:8888/connexion">Connexion</a>
-            <a class="box__top__lien" href="http://localhost:8888/inscription">Inscription</a>
+            <a class="box__top__lien" href="/connexion/index">Connexion</a>
+            <a class="box__top__lien" href="/inscription/index">Inscription</a>
         </div>
         <div class="box__center">
             <form action="" method="post">

@@ -1,10 +1,14 @@
 <?php
+
 class InscriptionModel extends Model {
     public function __construct() {
         $this->table = 'users';
         $this->getConnection();
     }
 
+    /**
+     * Permet de crée un nouveau utilisateur
+     */
     public function insertOneUser() {
         if(isset($_POST['email-inscription']) && isset($_POST['password-inscription'])) {
             // Hash du mot de passe
@@ -17,7 +21,7 @@ class InscriptionModel extends Model {
             $query->execute($option);
 
             // Redirection page de connection
-            header('Location: http://localhost:8888/connexion');
+            header('Location: /connexion/index');
         };
     }
 

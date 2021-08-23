@@ -27,14 +27,9 @@
         <div class="view-todolist">
             <?php foreach ($todolists as $todo): ?>
                 <div class="view-todolist__todo">
+                    <a href="/todolist/todo/<?php echo $todo["id"] ?>" class="view-todolist__todo__delete">Voir</a>
                     <p class="view-todolist__todo__title"><?= $todo['title'] ?></p>
                     <p class="view-todolist__todo__date"><?= $todo['date_time'] ?></p>
-                    <form action="" method="post" class="view-todolist__todo__add">
-                        <button type="submit" class="view-todolist__todo__add__btn">Ajouté</button>
-                    </form>
-                    <form action="" method="post" class="view-todolist__todo__delete">
-                        <button type="submit" name="<?php $todo['id'] ?>" class="view-todolist__todo__delete__btn">Supprimer</button>
-                    </form>
                 </div>
             <?php endforeach; ?>
         </div>
