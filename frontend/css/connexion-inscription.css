@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #004343;
+}
+
+.box {
+  padding: 2px 2px;
+  width: 60vh;
+  height: 70vh;
+  background-color: #FDFDFDFD;
+  border: 1px solid #FDFDFDFD;
+  -webkit-box-shadow: 0px 0px 2px #FDFDFDFD;
+          box-shadow: 0px 0px 2px #FDFDFDFD;
+  border-radius: 15px;
+}
+
+.box__center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80%;
+}
+
+.box__center__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 60px 0px;
+}
+
+.box__center__input label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.box__center__input input {
+  width: 300px;
+  padding: 10px 5px;
+  font-size: 15px;
+}
+
+.box__center__message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -30px;
+  margin-bottom: 10px;
+}
+
+.box__center__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box__center__btn button {
+  padding: 10px 40px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+  border: none;
+  color: #FDFDFDFD;
+  background-color: #004343;
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
+}
+
+.box__center__btn button:hover {
+  background-color: #0c6868;
+}
+/*# sourceMappingURL=connexion-inscription.css.map */

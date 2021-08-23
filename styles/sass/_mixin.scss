@@ -1,0 +1,11 @@
+@mixin initialisation {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin flexMid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
