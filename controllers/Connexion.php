@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controlleur de la page connexion
+ */
 class Connexion extends Controller {
     public function index() {
         // Utilise la methode du Controller général pour chargé le model

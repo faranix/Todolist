@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Model de class connexion
+ */
 class ConnexionModel extends Model {
     public function __construct() {
         $this->table = 'users';        

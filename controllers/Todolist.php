@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controlleur de la page todolist
+ */
 class Todolist extends Controller {
 
     /**
@@ -36,6 +38,9 @@ class Todolist extends Controller {
         }
     }
     
+    /**
+     * Permets d'afficher le rendu de la page todo et de gérer les interactions 
+     */
     public function todo($id) {
         // Démarre la session
         session_start();
@@ -67,6 +72,9 @@ class Todolist extends Controller {
         }
     }
 
+    /**
+     * Permets de supprimer une todolist
+     */
     public function delete($id) {
         // Démarre la session
         session_start();
@@ -84,6 +92,9 @@ class Todolist extends Controller {
 
     }
 
+    /**
+     * Permets de modifier une todolist
+     */
     public function modify($id) {
         // Démarre la session
         session_start();
@@ -99,6 +110,9 @@ class Todolist extends Controller {
         }
     }
 
+    /**
+     * Permets de supprimer une sous-todolist
+     */
     public function deleteSousTodo($id) {
         // Démarre la session
         session_start();
@@ -114,6 +128,9 @@ class Todolist extends Controller {
         }
     }
 
+    /**
+     * Permets de modifier une sous-todolist
+     */
     public function modifySousTodo($id) {
         // Démarre la session
         session_start();

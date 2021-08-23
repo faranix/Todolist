@@ -3,6 +3,7 @@
 define('WEBROOT', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));
 define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
+// Import des fichiers
 require_once(ROOT.'app/Model.php');
 require_once(ROOT.'app/Controller.php');
 
@@ -11,7 +12,7 @@ $params = explode('/', $_GET['p']);
 
 // Est-ce qu'un paramètre existe
 if($params[0] != '') {
-    // Récupérer le nom du controller 
+    // Récupére le nom du controller 
     $controller = ucfirst($params[0]);
 
     $action = isset($params[1]) ? $params[1] : 'index';
@@ -28,6 +29,7 @@ if($params[0] != '') {
         call_user_func_array([$controller, $action], $params);
         //$controller->$action();
     } else {
+        // Si les paramètre existe pas renvoie un message d'erreur
         http_response_code(404);
         echo "La page demandée n'existe pas ";
     }

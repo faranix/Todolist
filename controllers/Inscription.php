@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Controlleur de la page inscription
+ */
 class Inscription extends Controller {
     public function index() {
         // Utilise la methode du Controlleur général pour chargé le model

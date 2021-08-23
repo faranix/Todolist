@@ -14,7 +14,9 @@ abstract class Model {
     public $table;
     public $id;
 
-    // Methods
+    /**
+     * Permets la connexion à la base de données
+     */
     public function getConnection() {
         $this->_connexion = null;
 

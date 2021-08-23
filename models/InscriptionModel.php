@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Model de class inscription
+ */
 class InscriptionModel extends Model {
     public function __construct() {
         $this->table = 'users';

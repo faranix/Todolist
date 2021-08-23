@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Model de class todolist et sous-todolist
+ */
 class TodolistModel extends Model {
     public function __construct() {
         $this->table = "todolist";
