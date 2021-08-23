@@ -41,18 +41,18 @@ class TodolistModel extends Model {
         $sql = 'INSERT INTO ' . $this->table .'(`title`, `date_time`, `id_users`) VALUES (?, ?, ?)';
         $options = [$_POST["addInTodoList"], $dateNow , $this->id];
         $query = $this->_connexion->prepare($sql);
-        $query->execute($options);
+        return $query->execute($options);
     }
 
     /**
      * Permets de Supprimer une Todo
      */
-    /*public function deleteTodo($id) {
+    public function deleteTodo($id) {
         $sql = 'DELETE FROM ' .$this->table . 'INNER JOIN `` WHERE id=?';
         $options = [$id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
-    }*/
+    }
 
     // Sous todolist
 
@@ -65,7 +65,7 @@ class TodolistModel extends Model {
         $sql = 'DELETE FROM ' . $this->table . ' WHERE id=?';
         $options = [$id];
         $query = $this->_connexion->prepare($sql);
-        $query->execute($options);
+        return $query->execute($options);
     }
 
      /**
@@ -84,13 +84,12 @@ class TodolistModel extends Model {
      */
     public function insertSousTodo($id) {
         // Récupère la date actuelle en format anglais pour mySql
-        $this->table = 'sous_todolist';
         $dateNow = date('Y-m-d H:i:s');
 
-        $sql = 'INSERT INTO ' . $this->table .  '(`title`, `date_time`, `id_todolist`) VALUES (?, ?, ?)';
+        $sql = 'INSERT INTO `sous_todolist`(`title`, `date_time`, `id_todolist`) VALUES (?, ?, ?)';
         $options = [$_POST["addInSousTodoList"], $dateNow , $id];
         $query = $this->_connexion->prepare($sql);
-        $query->execute($options);
+        return $query->execute($options);
     }
 
     /**

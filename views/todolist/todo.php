@@ -25,11 +25,11 @@
         <div class="add-todolist">
             <form action="" method="post">
                 <input name="addInSousTodoList" type="text" placeholder="Entrée vos tâches à faire pour la liste : <?php echo $todoList['title'] ?>" required>
-                <button type="submit">Ajouter</button>
+                <button type="submit">Ajouter</button> 
             </form>
         </div>
         <div class="view-todolist">
-            <?php foreach ($sousTodoList as $sousTodo): ?>
+            <?php if ($sousTodoList) { foreach ($sousTodoList as $sousTodo): ?>
                 <div class="view-todolist__todo">
                     <a href="/todolist/index" class="view-todolist__todo__view">Retour</a>
                     <p class="view-todolist__todo__title"><?= $sousTodo['title'] ?></p>
@@ -37,7 +37,9 @@
                     <a href="" class="view-todolist__todo__add">Modifier</a>
                     <a href="/todolist/deleteSousTodo/<?php echo $sousTodo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach; } else { ?>
+                    <a href="/todolist/index" class="view-todolist__todo__view">Retour</a>
+               <?php } ?>
         </div>
     </main>
 </body>

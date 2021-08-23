@@ -19,7 +19,7 @@
 
     <main>
         <div class="add-todolist">
-            <form action="" method="post">
+            <form method="post">
                 <input name="addInTodoList" type="text" placeholder="Entrée votre liste de choses à faire" required>
                 <button type="submit">Ajouter</button>
             </form>

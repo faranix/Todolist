@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : lun. 23 août 2021 à 07:57
+-- Généré le : lun. 23 août 2021 à 16:22
 -- Version du serveur :  5.7.32
 -- Version de PHP : 7.4.12
 
@@ -61,7 +61,7 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `sous_todolist`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id_todolist` (`id_todolist`);
+  ADD KEY `sous_todolist_ibfk_1` (`id_todolist`);
 
 --
 -- Index pour la table `todolist`
@@ -106,9 +106,7 @@ ALTER TABLE `users`
 -- Contraintes pour la table `sous_todolist`
 --
 ALTER TABLE `sous_todolist`
-  ADD CONSTRAINT `sous_todolist_ibfk_1` FOREIGN KEY (`id`) REFERENCES `todolist` (`id`),
-  ADD CONSTRAINT `sous_todolist_ibfk_2` FOREIGN KEY (`id`) REFERENCES `todolist` (`id`),
-  ADD CONSTRAINT `sous_todolist_ibfk_3` FOREIGN KEY (`id`) REFERENCES `todolist` (`id`);
+  ADD CONSTRAINT `sous_todolist_ibfk_1` FOREIGN KEY (`id_todolist`) REFERENCES `todolist` (`id`);
 
 --
 -- Contraintes pour la table `todolist`
