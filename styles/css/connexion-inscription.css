@@ -1,13 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 a {
   color: currentColor;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 body {
   display: flex;
@@ -15,8 +13,7 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #004343;
-}
+  background-color: #004343; }
 
 .box {
   padding: 2px 2px;
@@ -25,73 +22,88 @@ body {
   background-color: #FDFDFDFD;
   border: 1px solid #FDFDFDFD;
   box-shadow: 0px 0px 2px #FDFDFDFD;
-  border-radius: 15px;
-}
-.box__top {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-.box__top__lien {
-  text-align: center;
-  width: 50%;
-  margin-top: 4px;
-  padding: 10px 0px;
-  background-color: #004343;
-  color: #FDFDFDFD;
-  transition: all 250ms ease-in;
-}
-.box__top__lien:nth-child(1) {
-  border-top-left-radius: 15px;
-}
-.box__top__lien:nth-child(2) {
-  border-top-right-radius: 15px;
-}
-.box__top__lien:hover {
-  background-color: #0c6868;
-}
-.box__center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80%;
-}
-.box__center__input {
-  display: flex;
-  flex-direction: column;
-  margin: 60px 0px;
-}
-.box__center__input label {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-.box__center__input input {
-  width: 300px;
-  padding: 10px 5px;
-  font-size: 15px;
-}
-.box__center__message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -30px;
-  margin-bottom: 10px;
-}
-.box__center__btn {
-  display: flex;
-  justify-content: center;
-}
-.box__center__btn button {
-  padding: 10px 40px;
-  align-self: center;
-  cursor: pointer;
-  border: none;
-  color: #FDFDFDFD;
-  background-color: #004343;
-  transition: all 250ms ease-in;
-}
-.box__center__btn button:hover {
-  background-color: #0c6868;
-}
+  border-radius: 15px; }
+  .box__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+    .box__top__lien {
+      text-align: center;
+      width: 50%;
+      margin-top: 4px;
+      padding: 10px 0px;
+      background-color: #004343;
+      color: #FDFDFDFD;
+      transition: all 250ms ease-in; }
+      .box__top__lien:nth-child(1) {
+        border-top-left-radius: 15px; }
+      .box__top__lien:nth-child(2) {
+        border-top-right-radius: 15px; }
+      .box__top__lien:hover {
+        background-color: #0c6868; }
+  .box__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%; }
+    .box__center__input {
+      display: flex;
+      flex-direction: column;
+      margin: 60px 0px; }
+      .box__center__input label {
+        font-size: 20px;
+        margin-bottom: 5px; }
+      .box__center__input input {
+        width: 300px;
+        padding: 10px 5px;
+        font-size: 15px; }
+    .box__center__message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -30px;
+      margin-bottom: 10px; }
+    .box__center__btn {
+      display: flex;
+      justify-content: center; }
+      .box__center__btn button {
+        padding: 10px 40px;
+        align-self: center;
+        cursor: pointer;
+        border: none;
+        border-radius: 2px;
+        color: #FDFDFDFD;
+        background-color: #004343;
+        transition: all 250ms ease-in; }
+        .box__center__btn button:hover {
+          background-color: #0c6868; }
+
+@media screen and (min-width: 2560px) {
+  .box__top__lien {
+    font-size: 40px; }
+
+  .box__center__input label {
+    font-size: 40px; }
+  .box__center__input input {
+    font-size: 40px;
+    width: 600px; }
+
+  .box__center__message {
+    font-size: 40px; }
+
+  .box__center__btn button {
+    font-size: 40px; } }
+@media screen and (max-width: 425px) {
+  .box {
+    height: 100vh;
+    border: none;
+    border-radius: 0px;
+    padding: 0px; }
+    .box .box__top__lien {
+      margin-top: 0px;
+      border-radius: 0px; } }
+@media screen and (max-width: 375px) {
+  .box__center__input input {
+    width: 250px; } }
 
 /*# sourceMappingURL=connexion-inscription.css.map */

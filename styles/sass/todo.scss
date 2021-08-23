@@ -13,3 +13,22 @@
     color: $color-primary;
     margin-bottom: 15px;
 }
+
+// Media Query 
+
+@media screen and (min-width: 2560px) {
+    .todolist-actuel {
+        font-size: 40px;
+    }
+
+    .view-todolist__todo__view {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .view-2 {
+        width: 100%;
+        border-bottom: 1px solid $color-primary;
+    }
+}

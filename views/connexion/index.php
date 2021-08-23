@@ -24,7 +24,6 @@
                     <label for="password">Mot de passe:</label>
                     <input type="password" name="password" required>
                 </div>
-                <div class="box__center__input">
                 <?php
                     // Affiche un message si le mot de passe est incorrect
                     if (isset($error)) {

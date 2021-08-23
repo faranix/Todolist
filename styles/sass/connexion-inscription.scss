@@ -91,6 +91,7 @@ body {
                 align-self: center;
                 cursor: pointer;
                 border: none;
+                border-radius: 2px;
                 color: $color-white;
                 background-color: $color-primary;
                 transition: all 250ms ease-in;
@@ -99,6 +100,56 @@ body {
                 background-color: $color-animationBtn;
                 }
             } 
+        }
+    }
+}
+
+// Media query 
+@media screen and (min-width: 2560px) {
+    .box__top__lien {
+        font-size: 40px;
+    }
+
+    .box__center__input {
+        label {
+            font-size: 40px;
+        }
+
+        input {
+            font-size: 40px;
+            width: 600px;
+        }
+    }
+
+    .box__center__message {
+        font-size: 40px;
+    }
+
+    .box__center__btn {
+        button {
+            font-size: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .box {
+        height: 100vh;
+        border: none;
+        border-radius: 0px;
+        padding: 0px;
+
+        .box__top__lien {
+            margin-top: 0px;
+            border-radius: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .box__center__input {
+        input {
+            width: 250px;
         }
     }
 }

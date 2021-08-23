@@ -13,11 +13,9 @@
 <body>
     <header class="header">
         <h1 class="header__title">Todolist</h1>
-        <div class="header__box">
-            <form class="header__deconnexion" action="" method="post">
-                <button type="submit" name="deconnexion" class="header__deconnexion__btn">Déconnexion</button>
-            </form>
-        </div>
+        <form class="header__deconnexion" action="" method="post">
+            <button type="submit" name="deconnexion" class="header__deconnexion__btn">Déconnexion</button>
+        </form>
     </header>
 
     <main>
@@ -40,7 +38,7 @@
                     <a href="/todolist/deleteSousTodo/<?php echo $sousTodo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
             <?php endforeach; } else { ?>
-                    <a href="/todolist/index" class="view-todolist__todo__view">Retour</a>
+                    <a href="/todolist/index" class="view-todolist__todo__view view-2">Retour</a>
                <?php } ?>
         </div>
     </main>
