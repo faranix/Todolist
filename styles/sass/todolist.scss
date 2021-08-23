@@ -4,13 +4,20 @@
 * {
     @include initialisation;
 }
-  
+
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+main {
+    @include flexMid;
+    flex-direction: column;
+}
+
+// Header
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background-color: $color-primary;
-    margin-bottom: 30px;
+    @include header;
 
     &__title {
         color: $color-white;
@@ -35,26 +42,19 @@
     }
 }
   
-  
-  
-main {
-    @include flexMid;
-    flex-direction: column;
-}
-  
+// Main
 .add-todolist {
-    width: 60vw;
+    @include flexMid;
     margin-bottom: 40px;
   
     form {
         input {
-            width: 80%;
+            width: 500px;
             font-size: 15px;
             padding: 5px 10px;
         }
   
         button {
-            width: 10%;
             font-size: 15px;
             padding: 6px 10px;
             color: $color-white;
@@ -76,63 +76,60 @@ main {
 
     &__todo {
         display: flex;
+        align-items: center;
+        height: 40px;
         text-align: center;
         font-size: 20px;
-        border: 1px solid $color-primary;
+        border-bottom: 1px solid $color-primary;
         overflow-x: scroll;
-
-        &__title {
-            width: 50%;
-            padding: 10px 15px;
-            border: 1px solid $color-primary;
-            overflow-y: scroll;
-        }
 
         &__date {
             width: 30%;
             padding: 10px 5px;
-            border: 1px solid $color-primary;
+            border-right: 1px solid $color-primary;
+            border-left: 1px solid $color-primary;
         }
 
-        &__add{
-            border: 1px solid $color-primary;
-            @include flexMid;
-            width: 10%;
+        &__edit {
+            display: flex;
+            width: 60%;
 
-            &__btn {
-                width: 100%;
-                height: 100%;
-                background-color: $color-white;
-                cursor: pointer;
-                border: none;
-                transition: all 250ms ease-in;
-                
-                &:hover {
-                    color: $color-white;
-                    background-color: $color-animationBtn;
-                }
+            input:focus {
+                outline: none;
             }
+
+            &__title {
+                padding: 10px 15px;
+                width: 85%;
+                border: none;
+                border-right: 1px solid $color-primary;
+                overflow-y: scroll;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            &__add{
+                @include flexMid;
+                @include settingBtn;
+                width: 15%;
+                padding: 15px 0px;
+                border-right: 1px solid $color-primary;
+                font-size: 19px
+            }
+        }
+
+        &__view {
+            @include flexMid;
+            @include settingBtn;
+            width: 10%;
         }
 
         &__delete {
-            border: 1px solid $color-primary;
             @include flexMid;
+            @include settingBtn;
             width: 10%;
-            
-            &__btn {
-                width: 100%;
-                height: 100%;
-                background-color: $color-white;
-                cursor: pointer;
-                border: none;
-                transition: all 250ms ease-in;
-                
-                &:hover {
-                    color: $color-white;
-                    background-color: $color-animationBtn;
-                }
-            }
         }
+        
     }
 }
 

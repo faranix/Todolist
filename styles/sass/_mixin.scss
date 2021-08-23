@@ -9,3 +9,24 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: $color-primary;
+    margin-bottom: 30px;
+}
+
+@mixin settingBtn {
+    height: 100%;
+    background-color: $color-white;
+    cursor: pointer;
+    border: none;
+    transition: all 250ms ease-in;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-animationBtn;
+    }
+}

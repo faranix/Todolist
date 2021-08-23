@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,YAAa;EACT,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,KAAK;;AAGhB,gBAAiB;EACb,KAAK,ECZO,OAAO;EDanB,aAAa,EAAE,IAAI",
+"sources": ["../sass/todo.scss","../sass/_variable.scss"],
+"names": [],
+"file": "todo.css"
+}

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="../../styles/css/todolist.css">
+    <link rel="stylesheet" href="/styles/css/todolist.css">
 
     <title>Todolist</title>
 </head>
@@ -19,7 +19,7 @@
 
     <main>
         <div class="add-todolist">
-            <form action="" method="post">
+            <form method="post">
                 <input name="addInTodoList" type="text" placeholder="Entrée votre liste de choses à faire" required>
                 <button type="submit">Ajouter</button>
             </form>
@@ -27,14 +27,13 @@
         <div class="view-todolist">
             <?php foreach ($todolists as $todo): ?>
                 <div class="view-todolist__todo">
-                    <p class="view-todolist__todo__title"><?= $todo['title'] ?></p>
+                    <a href="/todolist/todo/<?php echo $todo["id"] ?>" class="view-todolist__todo__view">Voir</a>
                     <p class="view-todolist__todo__date"><?= $todo['date_time'] ?></p>
-                    <form action="" method="post" class="view-todolist__todo__add">
-                        <button type="submit" class="view-todolist__todo__add__btn">Ajouté</button>
+                    <form class="view-todolist__todo__edit" action="/todolist/modifySousTodo/<?php echo $todo["id"] ?>" method="post">
+                        <input class="view-todolist__todo__edit__title" name="editTodo" value="<?= $todo['title'] ?>" required></input>
+                        <button type="submit" class="view-todolist__todo__edit__add">Modifier</button>
                     </form>
-                    <form action="" method="post" class="view-todolist__todo__delete">
-                        <button type="submit" name="<?php $todo['id'] ?>" class="view-todolist__todo__delete__btn">Supprimer</button>
-                    </form>
+                    <a href="/todolist/delete/<?php echo $todo["id"] ?>" class="view-todolist__todo__delete">Supprimer</a>
                 </div>
             <?php endforeach; ?>
         </div>
