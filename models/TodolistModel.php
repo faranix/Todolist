@@ -47,8 +47,13 @@ class TodolistModel extends Model {
     /**
      * Permets de Supprimer une Todo
      */
-    public function deleteTodo($id) {
-        $sql = 'DELETE FROM ' .$this->table . 'INNER JOIN `` WHERE id=?';
+    public function deleteTodo($id) {    
+        $sql = 'DELETE FROM sous_todolist WHERE id_todolist=?';
+        $options = [$id];
+        $query = $this->_connexion->prepare($sql);
+        $query->execute($options);
+
+        $sql = "DELETE FROM todolist WHERE id=?";
         $options = [$id];
         $query = $this->_connexion->prepare($sql);
         $query->execute($options);
@@ -83,10 +88,11 @@ class TodolistModel extends Model {
      * Permets d'envoyer une tâche à faire sur la todo ciblé à la base de donnée
      */
     public function insertSousTodo($id) {
+        $this->table = 'sous_todolist';
         // Récupère la date actuelle en format anglais pour mySql
         $dateNow = date('Y-m-d H:i:s');
 
-        $sql = 'INSERT INTO `sous_todolist`(`title`, `date_time`, `id_todolist`) VALUES (?, ?, ?)';
+        $sql = 'INSERT INTO ' . $this->table . '(`title`, `date_time`, `id_todolist`) VALUES (?, ?, ?)';
         $options = [$_POST["addInSousTodoList"], $dateNow , $id];
         $query = $this->_connexion->prepare($sql);
         return $query->execute($options);
