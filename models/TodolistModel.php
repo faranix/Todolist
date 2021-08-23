@@ -16,7 +16,7 @@ class TodolistModel extends Model {
         unset($_SESSION);
         session_destroy();
         session_write_close();
-        header("Location: http://localhost:8888/connexion");
+        header("Location: /connexion/index");
     }
 
     // Todolist
