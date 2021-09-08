@@ -19,7 +19,7 @@ class Todolist extends Controller {
 
             // Permets d'ajouter une chose à faire
             if (isset($_POST['addInTodoList'])) {
-                $this->TodolistModel->insertTodo();
+                $this->TodolistModel->insert($_SESSION['id']);
             }
 
             // Permets de ce déconnecter 
@@ -28,7 +28,7 @@ class Todolist extends Controller {
             }            
 
             // Permets d'afficher toute les choses à faire
-            $todolists = $this->TodolistModel->getAllTodolist();   
+            $todolists = $this->TodolistModel->findAll($_SESSION['id'], "id_users", NULL);   
 
             // Charge les fichiers pour le rendu
             $this->render('index', ['todolists' => $todolists]);
@@ -39,40 +39,6 @@ class Todolist extends Controller {
     }
     
     /**
-     * Permets d'afficher le rendu de la page todo et de gérer les interactions 
-     */
-    public function todo($id) {
-        // Démarre la session
-        session_start();
-
-        $this->loadModel("TodolistModel");
-
-        if ($_SESSION['id']) {
-
-            // Permets de ce déconnecter 
-            if (isset($_POST['deconnexion'])) {
-                $this->TodolistModel->disconnect();
-            } 
-            
-            // Permets d'envoyer une tâche à faire sur la todo ciblé à la base de donnée
-            if (isset($_POST['addInSousTodoList'])) {
-                $this->TodolistModel->insertSousTodo($id);
-            }
-
-            // Permets de récupérer les données de la todo sélectionner 
-            $todoList = $this->TodolistModel->getOneTodolist($id);
-            
-            // Permets de récupérer toute les sous tâches de la todo sélectionner
-            $sousTodoList = $this->TodolistModel->getAllSousTodolist($id);
-
-
-            $this->render('todo', ['todoList' => $todoList, "sousTodoList" => $sousTodoList]);
-        } else {
-            header('Location: /connexion/index');
-        }
-    }
-
-    /**
      * Permets de supprimer une todolist
      */
     public function delete($id) {
@@ -82,7 +48,7 @@ class Todolist extends Controller {
         $this->loadModel("TodolistModel");
 
         if ($_SESSION['id']) {
-            $this->TodolistModel->deleteTodo($id);
+            $this->TodolistModel->delete($id, "sous_todolist");
 
             header('Location: /todolist/index');
             
@@ -102,43 +68,7 @@ class Todolist extends Controller {
         $this->loadModel("TodolistModel");
 
         if ($_SESSION['id']) {
-            $this->TodolistModel->modifyTodo($id);
-
-            header('Location: /todolist/index');
-        } else {
-            header('Location: /connexion/index');
-        }
-    }
-
-    /**
-     * Permets de supprimer une sous-todolist
-     */
-    public function deleteSousTodo($id) {
-        // Démarre la session
-        session_start();
-
-        $this->loadModel("TodolistModel");
-
-        if ($_SESSION['id']) {
-            $this->TodolistModel->deleteSousTodo($id);
-
-            header('Location: /todolist/index');
-        } else {
-            header('Location: /connexion/index');
-        }
-    }
-
-    /**
-     * Permets de modifier une sous-todolist
-     */
-    public function modifySousTodo($id) {
-        // Démarre la session
-        session_start();
-
-        $this->loadModel("TodolistModel");
-
-        if ($_SESSION['id']) {
-            $this->TodolistModel->modifySousTodo($id);
+            $this->TodolistModel->modify($id);
 
             header('Location: /todolist/index');
         } else {
