@@ -3,10 +3,8 @@
  * Model de class inscription
  */
 class InscriptionModel extends Model {
-    public function __construct() {
-        $this->table = 'users';
-        $this->getConnection();
-    }
+    
+    protected $table = "users";
 
     /**
      * Permet de crée un nouveau utilisateur
