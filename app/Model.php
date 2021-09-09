@@ -15,7 +15,6 @@ abstract class Model {
     protected $table;
 
     public function __construct() {
-        $this->id = $_SESSION['id'];
         $this->getConnection();
     }
 

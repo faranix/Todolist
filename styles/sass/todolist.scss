@@ -73,6 +73,7 @@ main {
     border: 1px solid $color-primary;
     width: 80vw;
     height: 70vh;
+    overflow-y: scroll;
 
     &__todo {
         display: flex;

@@ -3,10 +3,8 @@
  * Model de class connexion
  */
 class ConnexionModel extends Model {
-    public function __construct() {
-        $this->table = 'users';        
-        $this->getConnection();
-    }
+    
+    protected $table = "users";
 
     /**
      * Permets de récupérer les informations saise par l'utilisateur
